@@ -1,5 +1,35 @@
-# Object file
-*.o
+# Godot-specific
+.godot/editor/               # Editor cache (temp files)
+.godot/imports/              # Imported assets cache
+.godot/.mono/                # Mono/C# build files
+.godot/.mono/temp/           # Temporary files
+.godot/.mono/obj/            # Temporary build objects
 
-# Ada Library Information
-*.ali
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OS-specific
+*.swp
+*.swo
+
+# Godot export templates
+.export/
+
+# Compiled scripts (C#)
+*.dll
+*.pdb
+
+# Ignore user-specific project settings
+*.cfg
+*.tmp
+
+# Ignore backups and autosaves
+*.bak
+*.old
+*.tmp
+
+# Ignore log files
+*.log
+
