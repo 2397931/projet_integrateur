@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://c2mio60weh83x"]
+[gd_scene load_steps=69 format=4 uid="uid://c2mio60weh83x"]
 
 [ext_resource type="Texture2D" uid="uid://o5gsepigjxrs" path="res://assets/Walls.png" id="1_1k3m2"]
 [ext_resource type="Script" uid="uid://bb6lwi8hvi8pg" path="res://scripts/infirmerie.gd" id="1_xyff2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dxuscy7nl6lnc" path="res://assets/Board2.png" id="6_6at85"]
 [ext_resource type="Texture2D" uid="uid://coogbxrn3gcxr" path="res://assets/Bucket.png" id="7_6fj2q"]
 [ext_resource type="PackedScene" uid="uid://dtm5e0xb02oei" path="res://scenes/carte_rouge.tscn" id="8_6fj2q"]
+[ext_resource type="Texture2D" uid="uid://7fbsgodaxvq6" path="res://assets/Fire-extinguisher3.png" id="9_g64cb"]
 [ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="11_20ln6"]
 [ext_resource type="Texture2D" uid="uid://c2fmdk63jak6v" path="res://assets/door_00.png" id="12_ak04l"]
 [ext_resource type="Texture2D" uid="uid://d3g1oifk1km2h" path="res://assets/door_01.png" id="13_756v8"]
@@ -3918,6 +3919,12 @@ texture = ExtResource("5_m081x")
 10:17/0 = 0
 11:17/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p11s4"]
+texture = ExtResource("9_g64cb")
+texture_region_size = Vector2i(16, 18)
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_5vcon"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_20ln6")
@@ -3926,6 +3933,7 @@ sources/2 = SubResource("TileSetAtlasSource_5ccjj")
 sources/3 = SubResource("TileSetAtlasSource_e0e7u")
 sources/4 = SubResource("TileSetAtlasSource_srr8t")
 sources/5 = SubResource("TileSetAtlasSource_ak04l")
+sources/6 = SubResource("TileSetAtlasSource_p11s4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4xvs"]
 atlas = ExtResource("18_ak04l")
@@ -4155,7 +4163,7 @@ tile_set = SubResource("TileSet_5vcon")
 
 [node name="objet_avant" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAgABIABQAGAAEAAAAhABIABQAGAAEAAAAiABIABQAGAAEAAAAjABIABQAGAAEAAAAkABIABQAGAAEAAAAlABIABQAGAAEAAAAmABIABQAGAAEAAAAnABIAAAAHAAEAAAAnABMAAAAHAAIAAAAnABQAAAAHAAMAAAASABIABQAEAAQAAAATABIABQAFAAQAAAAUABIABQAGAAQAAAABABIABQAFAAEAAAACABIABQAGAAEAAAADABIABQAFAAQAAAAEABIABQAGAAQAAAAAABIAAAAFAAIAAAAAABMAAAAGAAIAAAAAABQAAAAFAAMAAAAlAA8AAAAKAAsAAAAlABAAAAAKAAwAAAAmAA8AAAALAAsAAAAmABAAAAALAAwAAAAjAA8AAAAHAAsAAAAjABAAAAAHAAwAAAAkAA8AAAAIAAsAAAAkABAAAAAIAAwAAAAhAA8AAAABAAsAAAAhABAAAAABAAwAAAAiAA8AAAACAAsAAAAiABAAAAACAAwAAAAfAA8AAAAEAAsAAAAfABAAAAAEAAwAAAAgAA8AAAAFAAsAAAAgABAAAAAFAAwAAAAfABIABQAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAgABIABQAGAAEAAAAhABIABQAGAAEAAAAiABIABQAGAAEAAAAjABIABQAGAAEAAAAkABIABQAGAAEAAAAlABIABQAGAAEAAAAmABIABQAGAAEAAAAnABIAAAAHAAEAAAAnABMAAAAHAAIAAAAnABQAAAAHAAMAAAASABIABQAEAAQAAAATABIABQAFAAQAAAAUABIABQAGAAQAAAABABIABQAFAAEAAAACABIABQAGAAEAAAADABIABQAFAAQAAAAEABIABQAGAAQAAAAAABIAAAAFAAIAAAAAABMAAAAGAAIAAAAAABQAAAAFAAMAAAAlAA8AAAAKAAsAAAAlABAAAAAKAAwAAAAmAA8AAAALAAsAAAAmABAAAAALAAwAAAAjAA8AAAAHAAsAAAAjABAAAAAHAAwAAAAkAA8AAAAIAAsAAAAkABAAAAAIAAwAAAAhAA8AAAABAAsAAAAhABAAAAABAAwAAAAiAA8AAAACAAsAAAAiABAAAAACAAwAAAAfAA8AAAAEAAsAAAAfABAAAAAEAAwAAAAgAA8AAAAFAAsAAAAgABAAAAAFAAwAAAAfABIABQAEAAEAAAAQABMABgAAAAEAAAARABMABgABAAEAAAA=")
 tile_set = SubResource("TileSet_5vcon")
 
 [node name="objet_avant2" type="TileMapLayer" parent="."]

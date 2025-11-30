@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgmswnubflvw8"]
+[gd_scene load_steps=5 format=3 uid="uid://cgmswnubflvw8"]
 
 [ext_resource type="FontFile" uid="uid://b03vkpq771gst" path="res://fonts/windows-bold[1].ttf" id="1_l6cm7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.545341, 0.817398, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.484315, 0.286809, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(8.66354e-07, 0.566691, 0.821902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 3
+shadow_offset = Vector2(0, 4.54)
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -12,20 +25,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.5
-offset_top = -59.0
-offset_right = 146.5
-offset_bottom = 59.0
+offset_left = -192.5
+offset_top = -15.0
+offset_right = 192.5
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 41
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 46
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+text = "Quit"
