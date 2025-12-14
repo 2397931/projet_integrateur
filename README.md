@@ -1,6 +1,31 @@
 # muller-francois-sarah-tp3
 
+https://freesound.org/people/Artninja/sounds/810709/
 
+https://freesound.org/people/DDT197/sounds/445776/
+
+https://pixabay.com/sound-effects/cartoon-jump-6462/
+
+https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
+
+https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
+
+https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
+
+**Personnages**
+
+https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
+
+https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi
+
+**Musique**
+
+https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
+https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
+
+https://pixabay.com/music/ambient-unidentified-208890/
+
+**Assets utilisés**
 
 
 
