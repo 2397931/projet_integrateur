@@ -67,10 +67,6 @@ C. HUD
 
 # Créditation
 
-Cartes
-
-https://opengameart.org/content/keycredit-cards
-
 Autre salles
 
 https://zofiab.itch.io/
