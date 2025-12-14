@@ -12,6 +12,10 @@ https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
 
 https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
 
+https://pixabay.com/sound-effects/futuristic-factory-noise-004-311135/
+
+https://pixabay.com/sound-effects/futuristic-factory-machine-ps-014-314825/
+
 **Personnages**
 
 https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
@@ -21,6 +25,7 @@ https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi
 **Musique**
 
 https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
+
 https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
 
 https://pixabay.com/music/ambient-unidentified-208890/
