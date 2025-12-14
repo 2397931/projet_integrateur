@@ -27,7 +27,11 @@ https://pixabay.com/music/ambient-unidentified-208890/
 
 **Assets utilisés**
 
+https://craftpix.net/freebies/free-industrial-zone-tileset-pixel-art/?num=1&count=32&sq=industrial&pos=3
 
+https://zofiab.itch.io/
+
+https://haiyoooo.itch.io/
 
 # tp-3
 
