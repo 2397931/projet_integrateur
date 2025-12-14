@@ -1,6 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgmswnubflvw8"]
+[gd_scene load_steps=18 format=3 uid="uid://cgmswnubflvw8"]
 
+[ext_resource type="VideoStream" uid="uid://dwniagr464mqq" path="res://video/arriere_plan.ogv" id="1_bqqt6"]
 [ext_resource type="FontFile" uid="uid://b03vkpq771gst" path="res://fonts/windows-bold[1].ttf" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cqv1gv0og0aj7" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://pr8v8ln2igv0" path="res://art/background.png" id="2_wu84c"]
+[ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://or8l7uk6vnqj" path="res://assets/ombre-gradient-backgroun.jpg" id="6_rtw2f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
+texture = ExtResource("2_wu84c")
+modulate_color = Color(0.677567, 0.677567, 0.677567, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.65051, 0.843969, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.512515, 0.00337185, 0.912424, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 3
+shadow_offset = Vector2(0, 4.54)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0, 0.568627, 0.823529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 3
+shadow_offset = Vector2(0, 4.54)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
 bg_color = Color(0.545341, 0.817398, 1, 1)
@@ -17,6 +51,60 @@ corner_radius_bottom_left = 20
 shadow_size = 3
 shadow_offset = Vector2(0, 4.54)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("6_rtw2f")
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "text"
+length = 5.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(995, 193), Vector2(995, 193), Vector2(995, 193), Vector2(995, 193), Vector2(995, 193), Vector2(995, 193)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa1go"]
+_data = {
+&"RESET": SubResource("Animation_rtw2f"),
+&"text": SubResource("Animation_8ln24")
+}
+
 [node name="main_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -24,14 +112,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wu84c")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("1_bqqt6")
+autoplay = true
+loop = true
+
+[node name="background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_l6cm7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,30 +141,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.5
-offset_top = -15.0
-offset_right = 192.5
-offset_bottom = 241.0
+offset_left = -192.0
+offset_top = -19.0
+offset_right = 193.0
+offset_bottom = 442.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 41
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 46
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ln24")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="credit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 46
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
-text = "Options"
+text = "Credit"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 46
@@ -71,3 +176,149 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 995.0
+offset_top = 193.0
+offset_right = 996.0
+offset_bottom = 194.2
+scale = Vector2(1.2, 1.2)
+
+[node name="Label2" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.367
+anchor_right = 0.495
+anchor_bottom = 0.367
+offset_left = -433.48
+offset_top = -59.437
+offset_right = 442.52
+offset_bottom = 204.563
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 200
+text = "Lost  Part"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.367
+anchor_right = 0.495
+anchor_bottom = 0.367
+offset_left = -429.48
+offset_top = -72.437
+offset_right = 446.52
+offset_bottom = 191.563
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 200
+text = "Lost  Part"
+
+[node name="Credit" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -643.0
+offset_top = -416.0
+offset_right = 692.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oa1go")
+
+[node name="credittext" type="Label" parent="Credit"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 63.0
+offset_right = 775.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text" type="Label" parent="Credit"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -681.0
+offset_right = 1576.0
+offset_bottom = 1368.0
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 15
+text = "Sound effects
+
+https://freesound.org/people/Artninja/sounds/810709/
+
+https://freesound.org/people/DDT197/sounds/445776/
+
+https://pixabay.com/sound-effects/cartoon-jump-6462/
+
+https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
+
+https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
+
+https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
+
+Personnages
+
+https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
+
+https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text2" type="Label" parent="Credit"]
+layout_mode = 0
+offset_left = -288.0
+offset_top = -731.0
+offset_right = 2168.0
+offset_bottom = 1318.0
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 15
+text = "Musique
+
+https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
+https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
+
+https://pixabay.com/music/ambient-unidentified-208890/
+
+Assets
+
+https://zofiab.itch.io/
+
+https://haiyoooo.itch.io/
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="Credit"]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 574.0
+offset_right = 798.0
+offset_bottom = 702.0
+text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oa1go")
+}
+autoplay = "text"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credit/back" to="." method="_on_back_pressed"]
