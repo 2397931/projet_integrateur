@@ -1,3 +1,90 @@
+# muller-francois-sarah-tp3
+
+https://freesound.org/people/Artninja/sounds/810709/
+
+https://freesound.org/people/DDT197/sounds/445776/
+
+https://pixabay.com/sound-effects/cartoon-jump-6462/
+
+https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
+
+https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
+
+https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
+
+https://pixabay.com/sound-effects/futuristic-factory-noise-004-311135/
+
+https://pixabay.com/sound-effects/futuristic-factory-machine-ps-014-314825/
+
+https://pixabay.com/sound-effects/mad-scientist-lab-loopable-71170/
+
+**Personnages**
+
+https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
+
+https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi
+
+**Musique**
+
+https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
+
+https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
+
+https://pixabay.com/music/ambient-unidentified-208890/
+
+**Assets utilisés**
+
+https://craftpix.net/freebies/free-industrial-zone-tileset-pixel-art/?num=1&count=32&sq=industrial&pos=3
+
+https://zofiab.itch.io/
+
+https://haiyoooo.itch.io/
+
+# tp-3
+
+A. État, niveau et progression
+
+1. Les niveaux de mon jeu vont être différentes salles mais, le joueur devras trouver des cartes-clés pour rentrer dans ces salles.
+- Infirmerie
+- Réacteur
+- Laboratoire
+
+2. La difficulté de trouver les cartes-clés vas augmenter
+
+- coffre
+- casier de sécurité
+- casier
+
+3. Plein de paramètres
+
+- texte
+- menu
+- cartes-clés
+- casier
+- salles
+- inventaire
+
+B. Programmation clés/portes
+
+1. Le joueur devra chercher des clés à coffre/casier pour trouver les cartes-clés pour ouvrir les autres salles
+
+2. ?
+
+C. HUD
+
+1. Les étapes à faire vont être sur l'écran pour que le joueur sais quoi faire et lorsque le joueur à fini l'étape, la suivante apparaitra. Lorsque le joueur prendra un object il y a aussi un message d'affirmation.
+
+2. Le joueur aura besoin les information de base donc comment bouger se battre et aussi dans quelle situation il se trouve(le vaisseau spacial à besoin de réparation).
+
+# Créditation
+
+Autre salles
+
+https://zofiab.itch.io/
+
+https://haiyoooo.itch.io/
+
+
 # projet_integrateur
 
 *1. Est-ce que c'est un projet en équipe ou individuel?*
