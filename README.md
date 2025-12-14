@@ -16,6 +16,8 @@ https://pixabay.com/sound-effects/futuristic-factory-noise-004-311135/
 
 https://pixabay.com/sound-effects/futuristic-factory-machine-ps-014-314825/
 
+https://pixabay.com/sound-effects/mad-scientist-lab-loopable-71170/
+
 **Personnages**
 
 https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
