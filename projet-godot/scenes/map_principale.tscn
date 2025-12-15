@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://m4g0jcl2xmt3"]
+[gd_scene load_steps=33 format=4 uid="uid://m4g0jcl2xmt3"]
 
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="1_gt4m6"]
 [ext_resource type="Script" uid="uid://hpvn2q4j4nm3" path="res://scripts/map_principale.gd" id="1_kx8oq"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c1r1w58h5l6wf" path="res://assets/Mop.png" id="12_phqtq"]
 [ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="13_fkdho"]
 [ext_resource type="PackedScene" uid="uid://cr5a1i7ip2vf1" path="res://scenes/ennemi.tscn" id="14_yb64g"]
+[ext_resource type="Script" uid="uid://itswjbceile0" path="res://scenes/canvas_layer.gd" id="17_e6y6f"]
+[ext_resource type="PackedScene" uid="uid://dbgbfq7w15onw" path="res://scenes/inventory_ui.tscn" id="18_oox85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx3ok"]
 texture = ExtResource("1_gt4m6")
@@ -1376,6 +1378,23 @@ limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
 
+[node name="CanvasLayer" type="CanvasLayer" parent="joueur"]
+process_mode = 3
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+script = ExtResource("17_e6y6f")
+
+[node name="Inventory_ui" parent="joueur/CanvasLayer" instance=ExtResource("18_oox85")]
+anchors_preset = -1
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 181.0
+offset_top = 373.0
+offset_right = 115.0
+offset_bottom = 34.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="suite" type="Area2D" parent="."]
 position = Vector2(1867, 906)
 
@@ -1383,5 +1402,7 @@ position = Vector2(1867, 906)
 position = Vector2(31.5, -26.5)
 shape = SubResource("RectangleShape2D_kx8oq")
 
+[connection signal="closed" from="joueur/CanvasLayer/Inventory_ui" to="." method="_on_inventory_ui_closed"]
+[connection signal="opened" from="joueur/CanvasLayer/Inventory_ui" to="." method="_on_inventory_ui_opened"]
 [connection signal="body_entered" from="suite" to="." method="_on_suite_body_entered"]
 [connection signal="body_exited" from="suite" to="." method="_on_suite_body_exited"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://by1vdpe3n0axv"]
+[gd_scene load_steps=45 format=3 uid="uid://by1vdpe3n0axv"]
 
 [ext_resource type="Script" uid="uid://r158dq5dr6j6" path="res://scripts/joueur.gd" id="1_nuici"]
 [ext_resource type="Texture2D" uid="uid://d1cmfc17udy6k" path="res://art/attaque_00.png" id="1_qpsld"]
 [ext_resource type="Texture2D" uid="uid://bxxtrydmo5gcc" path="res://art/attaque_01.png" id="2_nuici"]
+[ext_resource type="Resource" uid="uid://djufxgicgvjjs" path="res://Inventory/playerInventory.tres" id="2_osas5"]
 [ext_resource type="Texture2D" uid="uid://cbktq5f1xmjse" path="res://art/attaque_02.png" id="3_o4ekx"]
 [ext_resource type="Texture2D" uid="uid://brx2mu6r1kr4g" path="res://art/attaque_03.png" id="4_qopr7"]
 [ext_resource type="Texture2D" uid="uid://c3d2felv1kgr3" path="res://art/attaque_04.png" id="5_os0da"]
@@ -195,6 +196,7 @@ height = 47.0
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_nuici")
+inventory = ExtResource("2_osas5")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

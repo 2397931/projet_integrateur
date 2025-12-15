@@ -2481,6 +2481,33 @@ sources/1 = SubResource("TileSetAtlasSource_buikf")
 sources/2 = SubResource("TileSetAtlasSource_80p3s")
 sources/3 = SubResource("TileSetAtlasSource_yq02q")
 
+[sub_resource type="Animation" id="Animation_0cldg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 100)]
+}
+
 [sub_resource type="Animation" id="Animation_yq02q"]
 resource_name = "shake"
 length = 5.5
@@ -2508,33 +2535,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(12.284, 106.784), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933), Vector2(12.284, 106.784), Vector2(0, 100), Vector2(-6.135, 100), Vector2(2.754, 111.07), Vector2(28.161, 117.933)]
-}
-
-[sub_resource type="Animation" id="Animation_0cldg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1wgmj"]

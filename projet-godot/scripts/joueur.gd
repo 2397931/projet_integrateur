@@ -6,6 +6,7 @@ class_name Joueur
 @export var gravity := 1200
 @export var damage_per_hit := 1
 @export var invulnerability_time := 0.8
+@export var inventory: Inventory
 
 @onready var marche_metal = $AudioStreamPlayer2D
 @onready var son_saut = $AudioStreamPlayer2D2
