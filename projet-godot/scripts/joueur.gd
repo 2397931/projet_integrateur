@@ -54,6 +54,9 @@ func take_damage(amount):
 	if global.current_health <= 0:
 		die()
 
+func _on_hurt_box_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
 
 func die():
 	set_process(false)
@@ -131,3 +134,8 @@ func attaque():
 		$AnimatedSprite2D.play("walk")
 	else:
 		$AnimatedSprite2D.play("idle")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect(inventory)

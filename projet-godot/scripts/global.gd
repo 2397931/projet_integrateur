@@ -12,6 +12,8 @@ var joueur_start2_posy = 913
 var joueur_start_posx = 185
 var joueur_start_posy = 913
 
+var health_bar: Node = null  # <-- new variable
+
 var key_founded = []
 
 var max_health := 6

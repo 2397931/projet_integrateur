@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://blaem2o50ppwy"]
+
+[ext_resource type="Script" uid="uid://bdm7ouqrf851a" path="res://scripts/inventoryItem.gd" id="1_duyyw"]
+[ext_resource type="Texture2D" uid="uid://gt3jijbnrmxh" path="res://assets/beamLong2.png" id="2_ytmmy"]
+
+[resource]
+script = ExtResource("1_duyyw")
+name = "lostPart"
+texture = ExtResource("2_ytmmy")
+metadata/_custom_type_script = "uid://bdm7ouqrf851a"

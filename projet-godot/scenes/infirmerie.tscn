@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://c2mio60weh83x"]
+[gd_scene load_steps=72 format=4 uid="uid://c2mio60weh83x"]
 
 [ext_resource type="Texture2D" uid="uid://o5gsepigjxrs" path="res://assets/Walls.png" id="1_1k3m2"]
 [ext_resource type="Script" uid="uid://bb6lwi8hvi8pg" path="res://scripts/infirmerie.gd" id="1_xyff2"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkgtvrl521f52" path="res://assets/Props.png" id="5_m081x"]
 [ext_resource type="Texture2D" uid="uid://dxuscy7nl6lnc" path="res://assets/Board2.png" id="6_6at85"]
 [ext_resource type="Texture2D" uid="uid://coogbxrn3gcxr" path="res://assets/Bucket.png" id="7_6fj2q"]
-[ext_resource type="PackedScene" uid="uid://dtm5e0xb02oei" path="res://scenes/carte_rouge.tscn" id="8_6fj2q"]
+[ext_resource type="PackedScene" uid="uid://dtm5e0xb02oei" path="res://scenes/red_card.tscn" id="8_6fj2q"]
 [ext_resource type="Texture2D" uid="uid://7fbsgodaxvq6" path="res://assets/Fire-extinguisher3.png" id="9_g64cb"]
 [ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="11_20ln6"]
 [ext_resource type="Texture2D" uid="uid://c2fmdk63jak6v" path="res://assets/door_00.png" id="12_ak04l"]
@@ -24,7 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://c2ptjmup38lks" path="res://assets/AnimatedWindow.png" id="20_7m2b0"]
 [ext_resource type="Script" uid="uid://bj6c5x4xcy3tc" path="res://scripts/window.gd" id="21_xyff2"]
 [ext_resource type="PackedScene" uid="uid://cvi8lhd68bq0p" path="res://scenes/menu.tscn" id="23_uwt7b"]
+[ext_resource type="Script" uid="uid://itswjbceile0" path="res://scripts/canvas_layer (2).gd" id="24_180nt"]
 [ext_resource type="PackedScene" uid="uid://c34gecy2ufov0" path="res://scenes/barre_vie.tscn" id="24_g64cb"]
+[ext_resource type="PackedScene" uid="uid://dbgbfq7w15onw" path="res://scenes/inventory_ui.tscn" id="25_jxrr2"]
+[ext_resource type="AudioStream" uid="uid://bp4b1tx5xgsju" path="res://audio/mad-scientist-lab-loopable-71170.mp3" id="28_jxrr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8y7m"]
 texture = ExtResource("1_1k3m2")
@@ -4228,6 +4231,24 @@ limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
 
+[node name="CanvasLayer" type="CanvasLayer" parent="joueur"]
+process_mode = 3
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+script = ExtResource("24_180nt")
+
+[node name="Inventory_ui" parent="joueur/CanvasLayer" instance=ExtResource("25_jxrr2")]
+anchors_preset = -1
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 181.0
+offset_top = 373.0
+offset_right = 115.0
+offset_bottom = 34.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="menu" parent="." instance=ExtResource("23_uwt7b")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -4236,6 +4257,11 @@ visible = false
 [node name="barre_vie" parent="HUD" instance=ExtResource("24_g64cb")]
 position = Vector2(95, 40)
 scale = Vector2(3, 3)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_jxrr2")
+volume_db = -15.53
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

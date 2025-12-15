@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do1ednuvfms47"
-path="res://.godot/imported/redCard.png-0a21ba5948f97fbb3f7c870a88f3fe65.ctex"
+uid="uid://gt3jijbnrmxh"
+path="res://.godot/imported/beamLong2.png-2d104291ec7585f57ddb40323aff162d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/redCard.png"
-dest_files=["res://.godot/imported/redCard.png-0a21ba5948f97fbb3f7c870a88f3fe65.ctex"]
+source_file="res://assets/beamLong2.png"
+dest_files=["res://.godot/imported/beamLong2.png-2d104291ec7585f57ddb40323aff162d.ctex"]
 
 [params]
 

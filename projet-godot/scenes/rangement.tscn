@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://csb4ycex1ubt6"]
+[gd_scene load_steps=33 format=4 uid="uid://csb4ycex1ubt6"]
 
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="1_ofthd"]
 [ext_resource type="Texture2D" uid="uid://gg08whe6hald" path="res://assets/tiles_dark.png" id="2_f7sf7"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bvti0cnucxtkq" path="res://assets/Box5.png" id="10_b7vip"]
 [ext_resource type="Texture2D" uid="uid://b7rscrkas741x" path="res://assets/Box6.png" id="11_dbdyv"]
 [ext_resource type="Texture2D" uid="uid://ewihjht4u0y" path="res://assets/Box7.png" id="12_1om0r"]
+[ext_resource type="PackedScene" uid="uid://bn2n35uq6egcw" path="res://scenes/lost_part.tscn" id="13_f7sf7"]
+[ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="14_vbv7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85haj"]
 texture = ExtResource("1_ofthd")
@@ -2089,3 +2091,17 @@ rotation = -0.410152
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAGABEABAABAAEAAGAGABIABAAAAAEAAGAFABEABAABAAAAAGAFABIABAAAAAAAAGAjAB8AAwAAAAEAAAAkAB8AAwABAAEAAAA=")
 tile_set = SubResource("TileSet_pauo6")
+
+[node name="lost_part" parent="." instance=ExtResource("13_f7sf7")]
+position = Vector2(1600, 930)
+
+[node name="joueur" parent="." instance=ExtResource("14_vbv7l")]
+position = Vector2(121, 897)
+scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="joueur"]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080

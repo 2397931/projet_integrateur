@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhdcms38dh2m7"]
 
 [ext_resource type="Texture2D" uid="uid://coqxavoctc4wf" path="res://assets/inventorySlot.png" id="1_nfd3l"]
-[ext_resource type="Script" uid="uid://dln8hvxmcdcko" path="res://scenes/slot_ui.gd" id="1_vlebx"]
+[ext_resource type="Script" uid="uid://dln8hvxmcdcko" path="res://scripts/slot_ui.gd" id="1_vlebx"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

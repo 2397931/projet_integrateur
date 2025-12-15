@@ -1,14 +1,12 @@
 extends Node2D
 
-@onready var inventory: Inventory = preload("res://Inventory/playerInventory.tres")
-
-@onready var laboAudio = $AudioStreamPlayer2
-#var carte rouge = preload("res://scenes/carte_rouge.tscn")
+@onready var reactorAudio1 = $AudioStreamPlayer
+@onready var reactorAudio2 = $AudioStreamPlayer2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	laboAudio.play()
-
+	reactorAudio1.play()
+	reactorAudio2.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

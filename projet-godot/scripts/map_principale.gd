@@ -26,8 +26,6 @@ func change_scene():
 			get_tree().change_scene_to_file("res://scenes/map_principale_suite.tscn")
 			global.finish_changescenes()
 
-
-
 func _on_inventory_ui_closed() -> void:
 	get_tree().paused = false
 

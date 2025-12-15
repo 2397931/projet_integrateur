@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn2n35uq6egcw"]
+
+[ext_resource type="Script" uid="uid://6ch4e6cre6eh" path="res://scripts/lost_part.gd" id="1_0gww0"]
+[ext_resource type="Texture2D" uid="uid://gt3jijbnrmxh" path="res://assets/beamLong2.png" id="1_nmb0u"]
+[ext_resource type="AudioStream" uid="uid://cdnhqbcq5phdv" path="res://audio/item-equip-6904.mp3" id="3_ihqhr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmb0u"]
+size = Vector2(27, 88)
+
+[sub_resource type="Animation" id="Animation_nmb0u"]
+resource_name = "up_down"
+length = 5.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1.06667, 2.1, 3.26667, 4.33333, 5.23333, 6.46667, 6.66667, 6.83333, 6.96667, 7.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 7.355), Vector2(0, -12.875), Vector2(0, 7.355), Vector2(0, -12.875), Vector2(0, 7.355), Vector2(0, -12.875), Vector2(0, -12.875), Vector2(0, 7.355), Vector2(0, 7.355), Vector2(0, -12.875)]
+}
+
+[sub_resource type="Animation" id="Animation_q61j4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gww0"]
+_data = {
+&"RESET": SubResource("Animation_q61j4"),
+&"up_down": SubResource("Animation_nmb0u")
+}
+
+[node name="lost_part" type="Node2D"]
+script = ExtResource("1_0gww0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_nmb0u")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_nmb0u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0gww0")
+}
+autoplay = "up_down"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ihqhr")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

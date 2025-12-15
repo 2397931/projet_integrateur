@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c1r1w58h5l6wf" path="res://assets/Mop.png" id="12_phqtq"]
 [ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="13_fkdho"]
 [ext_resource type="PackedScene" uid="uid://cr5a1i7ip2vf1" path="res://scenes/ennemi.tscn" id="14_yb64g"]
-[ext_resource type="Script" uid="uid://itswjbceile0" path="res://scenes/canvas_layer.gd" id="17_e6y6f"]
+[ext_resource type="Script" uid="uid://itswjbceile0" path="res://scripts/canvas_layer (2).gd" id="17_e6y6f"]
 [ext_resource type="PackedScene" uid="uid://dbgbfq7w15onw" path="res://scenes/inventory_ui.tscn" id="18_oox85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx3ok"]
@@ -1394,6 +1394,7 @@ offset_right = 115.0
 offset_bottom = 34.0
 grow_horizontal = 1
 grow_vertical = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="suite" type="Area2D" parent="."]
 position = Vector2(1867, 906)

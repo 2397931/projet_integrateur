@@ -1,14 +1,17 @@
 extends Node2D
 
 @onready var pickup = $AudioStreamPlayer
+@export var itemRes: InventoryItem
 
-# Called when the node enters the scene tree for the first time.
+func collect(inventory: Inventory):
+	inventory.insert(itemRes)
+	pickup.play()
+	queue_free()
+
 func _ready() -> void:
 	if self.name in global.key_founded:
 		queue_free()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

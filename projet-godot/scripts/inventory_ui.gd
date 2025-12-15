@@ -8,9 +8,16 @@ signal closed
 
 var isOpen = false
 
-func update():
-	for i in range(min(inventory.items.size(), slots.size())):
-		slots[i].update(inventory.items[i])
+func _ready() -> void:
+	inventory.changed.connect(update)
+	update()
+
+func update() -> void:
+	for i in range(slots.size()):
+		if i < inventory.items.size():
+			slots[i].update(inventory.items[i])
+		else:
+			slots[i].clear()
 
 func open():
 	visible = true
@@ -21,10 +28,6 @@ func close():
 	visible = false
 	isOpen = false
 	closed.emit()
-
-func _ready() -> void:
-	update()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
