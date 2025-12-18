@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var loser = $AudioStreamPlayer
+
 func _on_retry_pressed():
+	loser.play()
 	get_tree().paused = false
 	global.death_count = 0
 	global.reset_health()

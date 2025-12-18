@@ -1,13 +1,22 @@
 extends Control
 
 var game_scene = preload("res://scenes/main.tscn").instantiate()
+@onready var menu_music = $MenuAudio
 
 func _ready():
+	if not menu_music.playing:
+		menu_music.play()
 	HealthBar.hide_health_bar()
 
 func _on_start_pressed() -> void:
+	if menu_music.playing:
+		menu_music.stop()
+	var global_audio = GlobalAudio.get_node("AudioStreamPlayer")
+	if not global_audio.playing:
+		global_audio.play()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	HealthBar.show_health_bar()
+
 
 func _on_credit_pressed() -> void:
 	$Credit.show()

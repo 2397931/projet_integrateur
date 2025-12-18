@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgmswnubflvw8"]
+[gd_scene load_steps=19 format=3 uid="uid://cgmswnubflvw8"]
 
 [ext_resource type="VideoStream" uid="uid://dwniagr464mqq" path="res://video/arriere_plan.ogv" id="1_bqqt6"]
 [ext_resource type="FontFile" uid="uid://b03vkpq771gst" path="res://fonts/windows-bold[1].ttf" id="1_l6cm7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pr8v8ln2igv0" path="res://art/background.png" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://or8l7uk6vnqj" path="res://assets/ombre-gradient-backgroun.jpg" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://bu0l6h4ags7mc" path="res://audio/spaceship-journal-the-wrong-planet-11920.mp3" id="7_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6cm7"]
 texture = ExtResource("2_wu84c")
@@ -257,7 +258,7 @@ offset_right = 1576.0
 offset_bottom = 1368.0
 theme_override_fonts/font = ExtResource("5_8ln24")
 theme_override_font_sizes/font_size = 15
-text = "Sound effects
+text = "Effets speciaux
 
 https://freesound.org/people/Artninja/sounds/810709/
 
@@ -270,6 +271,10 @@ https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
 https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
 
 https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
+
+https://pixabay.com/sound-effects/winner-game-sound-404167/
+
+https://pixabay.com/sound-effects/search/loser/
 
 Personnages
 
@@ -306,10 +311,10 @@ vertical_alignment = 1
 
 [node name="back" type="Button" parent="Credit"]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 574.0
-offset_right = 798.0
-offset_bottom = 702.0
+offset_left = 526.0
+offset_top = 593.0
+offset_right = 802.0
+offset_bottom = 721.0
 text = "Back"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -317,6 +322,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_oa1go")
 }
 autoplay = "text"
+
+[node name="MenuAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_oa1go")
+volume_db = -32.941
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/credit" to="." method="_on_credit_pressed"]

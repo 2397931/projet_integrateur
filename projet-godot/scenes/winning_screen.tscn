@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqgu7fx8v78el"]
+
+[ext_resource type="AudioStream" uid="uid://pjw7q8qxlr26" path="res://audio/winner-game-sound-404167.mp3" id="1_umdnf"]
+[ext_resource type="Script" uid="uid://b1wjyddety7ih" path="res://scripts/winning_screen.gd" id="1_xtqdr"]
+[ext_resource type="Texture2D" uid="uid://or8l7uk6vnqj" path="res://assets/ombre-gradient-backgroun.jpg" id="2_8bwj2"]
+[ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="2_yhty7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n6vlr"]
+texture = ExtResource("2_8bwj2")
+
+[node name="winning_screen" type="Node2D"]
+script = ExtResource("1_xtqdr")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1924.0
+offset_bottom = 1084.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n6vlr")
+
+[node name="Bravo" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 211.0
+offset_right = 1385.0
+offset_bottom = 500.0
+theme_override_fonts/font = ExtResource("2_yhty7")
+theme_override_font_sizes/font_size = 206
+text = "Bravos!!"
+
+[node name="retry" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 660.0
+offset_right = 1337.0
+offset_bottom = 951.0
+theme_override_fonts/font = ExtResource("2_yhty7")
+theme_override_font_sizes/font_size = 81
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_umdnf")
+volume_db = -20.96
+autoplay = true
+
+[connection signal="pressed" from="Panel/retry" to="." method="_on_retry_pressed"]

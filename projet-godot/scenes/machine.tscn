@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://co22n6xynewm7"]
+
+[ext_resource type="Texture2D" uid="uid://baht7skfjdmgt" path="res://assets/machineCaser.png" id="1_73k52"]
+[ext_resource type="Script" uid="uid://cb5o8lf3csdxw" path="res://scripts/machine.gd" id="1_448ux"]
+[ext_resource type="Texture2D" uid="uid://ctf1y7yewxral" path="res://assets/machineReparer.png" id="2_448ux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hexfi"]
+size = Vector2(369, 592)
+
+[node name="machineArea" type="Area2D"]
+script = ExtResource("1_448ux")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1600.5, 545)
+shape = SubResource("RectangleShape2D_hexfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1597, 543.5)
+scale = Vector2(0.5, 0.532407)
+texture = ExtResource("1_73k52")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1597, 543.5)
+scale = Vector2(0.5, 0.532407)
+texture = ExtResource("2_448ux")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

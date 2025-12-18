@@ -1,8 +1,5 @@
 extends Node2D
 
-@onready var hud = $InstructionsHUD
-@onready var red_card = $RedCard
-
 signal card_collected(card)
 
 func collect_card(card):

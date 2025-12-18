@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://csb4ycex1ubt6"]
+[gd_scene load_steps=47 format=4 uid="uid://csb4ycex1ubt6"]
 
 [ext_resource type="Script" uid="uid://dlfl8bawjbcfb" path="res://scripts/rangement.gd" id="1_1om0r"]
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="1_ofthd"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b35kh7tyfn5lt" path="res://assets/door_04.png" id="20_ieur8"]
 [ext_resource type="Texture2D" uid="uid://gw5mhtmcovj6" path="res://assets/door_05.png" id="21_uo0bm"]
 [ext_resource type="Texture2D" uid="uid://dagx2weiipyay" path="res://assets/door_06.png" id="22_a46et"]
+[ext_resource type="PackedScene" uid="uid://b1bkrn7t023pe" path="res://scenes/health_kit.tscn" id="23_dviyx"]
 [ext_resource type="AudioStream" uid="uid://bsa2s6r7ww7dm" path="res://audio/futuristic-factory-machine-ps-014-314825.mp3" id="24_e6jbx"]
 [ext_resource type="AudioStream" uid="uid://bum5qg3t70rgo" path="res://audio/futuristic-factory-noise-004-311135.mp3" id="25_dviyx"]
 
@@ -2155,6 +2156,9 @@ animation = &"door"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_wsgec")
+
+[node name="healthKit" parent="." instance=ExtResource("23_dviyx")]
+position = Vector2(1748, 932)
 
 [node name="joueur" parent="." instance=ExtResource("14_vbv7l")]
 position = Vector2(121, 897)

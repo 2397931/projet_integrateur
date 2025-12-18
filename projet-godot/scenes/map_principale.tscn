@@ -1400,7 +1400,7 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_e6y6f")
 
 [node name="joueur" parent="." instance=ExtResource("13_fkdho")]
-position = Vector2(1837, 912)
+position = Vector2(185, 913)
 
 [node name="Camera2D" type="Camera2D" parent="joueur"]
 zoom = Vector2(2, 2)
@@ -1436,12 +1436,13 @@ position = Vector2(31.5, -26.5)
 shape = SubResource("RectangleShape2D_kx8oq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="instructionsHud" parent="CanvasLayer" instance=ExtResource("19_oox85")]
-offset_left = 566.0
-offset_top = 872.0
-offset_right = -1197.0
-offset_bottom = -141.0
+offset_left = 571.0
+offset_top = 874.0
+offset_right = -1192.0
+offset_bottom = -139.0
 
 [connection signal="body_entered" from="signArea1" to="." method="_on_sign_area_1_body_entered"]
 [connection signal="body_entered" from="signArea2" to="." method="_on_sign_area_2_body_entered"]

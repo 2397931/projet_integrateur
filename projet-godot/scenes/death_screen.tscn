@@ -1,23 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsqxiy6qyohw5"]
+[gd_scene load_steps=6 format=3 uid="uid://bsqxiy6qyohw5"]
 
 [ext_resource type="Script" uid="uid://c4pgllkhsg0cm" path="res://scripts/death_screen.gd" id="1_dwo6e"]
 [ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="1_uyutr"]
+[ext_resource type="Texture2D" uid="uid://or8l7uk6vnqj" path="res://assets/ombre-gradient-backgroun.jpg" id="2_mqh5l"]
+[ext_resource type="AudioStream" uid="uid://b56mm2ijlos7l" path="res://audio/game-over-39-199830.mp3" id="4_7ns25"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ns25"]
+texture = ExtResource("2_mqh5l")
 
 [node name="death_screen" type="Node2D"]
 script = ExtResource("1_dwo6e")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 528.0
-offset_top = 169.0
-offset_right = 1611.0
-offset_bottom = 870.0
+offset_top = -2.0
+offset_right = 1926.0
+offset_bottom = 1083.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ns25")
 
 [node name="game over" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 225.0
-offset_top = 46.0
-offset_right = 898.0
-offset_bottom = 360.0
+offset_left = 631.0
+offset_top = 196.0
+offset_right = 1304.0
+offset_bottom = 510.0
 theme_override_fonts/font = ExtResource("1_uyutr")
 theme_override_font_sizes/font_size = 96
 text = "Game over"
@@ -32,12 +37,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -184.5
+offset_left = -171.0
 offset_top = 120.5
-offset_right = 183.5
+offset_right = 197.0
 offset_bottom = 267.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_uyutr")
+theme_override_font_sizes/font_size = 81
 text = "Retry"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7ns25")
+volume_db = -11.7
 
 [connection signal="pressed" from="Panel/retry" to="." method="_on_retry_pressed"]

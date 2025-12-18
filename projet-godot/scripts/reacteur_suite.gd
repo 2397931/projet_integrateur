@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	
 	global.current_scene = "reacteur_suite"
 
 	if global.game_first_loadin:

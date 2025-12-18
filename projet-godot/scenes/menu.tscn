@@ -91,7 +91,9 @@ offset_bottom = 475.0
 theme_override_fonts/font = ExtResource("3_4ytvr")
 text = "* Utilisez les flèches et A/D pour vous déplacer  
 
-* Appuyez sur Espace et la flèche du haut pour sauter 
+* Appuyez sur E pour intéragir
+
+* Appuyez sur Espace pour sauter 
  
 * Clicquer avec la souris droite pour attaquer  
 

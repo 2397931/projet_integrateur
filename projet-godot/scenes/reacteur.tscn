@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://mlgf8rphj4ys"]
+[gd_scene load_steps=61 format=4 uid="uid://mlgf8rphj4ys"]
 
 [ext_resource type="Script" uid="uid://c57dlqhjqn8ad" path="res://scripts/reacteur.gd" id="1_1wgmj"]
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="1_wb34m"]
@@ -23,11 +23,13 @@
 [ext_resource type="Script" uid="uid://ctcpunq0ml2pe" path="res://scripts/area_2d2.gd" id="23_2t3yp"]
 [ext_resource type="AudioStream" uid="uid://bum5qg3t70rgo" path="res://audio/futuristic-factory-noise-004-311135.mp3" id="23_teknq"]
 [ext_resource type="Texture2D" uid="uid://c2fmdk63jak6v" path="res://assets/door_00.png" id="24_mw8cd"]
+[ext_resource type="PackedScene" uid="uid://b1bkrn7t023pe" path="res://scenes/health_kit.tscn" id="25_2t3yp"]
 [ext_resource type="Texture2D" uid="uid://d3g1oifk1km2h" path="res://assets/door_01.png" id="25_40lbm"]
 [ext_resource type="Texture2D" uid="uid://d3p4q32f3qea6" path="res://assets/door_02.png" id="26_1curp"]
 [ext_resource type="Texture2D" uid="uid://dn164h4740u1" path="res://assets/door_03.png" id="27_5jrj2"]
 [ext_resource type="Texture2D" uid="uid://b35kh7tyfn5lt" path="res://assets/door_04.png" id="28_yhx7n"]
 [ext_resource type="Texture2D" uid="uid://gw5mhtmcovj6" path="res://assets/door_05.png" id="29_cryli"]
+[ext_resource type="PackedScene" uid="uid://cr5a1i7ip2vf1" path="res://scenes/ennemi.tscn" id="29_hjymo"]
 [ext_resource type="Texture2D" uid="uid://dagx2weiipyay" path="res://assets/door_06.png" id="30_dew63"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wgmj"]
@@ -2576,6 +2578,17 @@ animation = &"door"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_jov5u")
+
+[node name="ennemi" parent="." instance=ExtResource("29_hjymo")]
+position = Vector2(1226, 979)
+scale = Vector2(3, 3)
+
+[node name="ennemi2" parent="." instance=ExtResource("29_hjymo")]
+position = Vector2(1769, 785)
+scale = Vector2(3, 3)
+
+[node name="healthKit" parent="." instance=ExtResource("25_2t3yp")]
+position = Vector2(1470, 932)
 
 [node name="joueur" parent="." instance=ExtResource("7_n6l1j")]
 position = Vector2(464, 898)
