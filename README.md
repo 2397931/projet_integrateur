@@ -1,44 +1,18 @@
-# muller-francois-sarah-tp3
+# muller-francois-sarah
 
-https://freesound.org/people/Artninja/sounds/810709/
+# projet_integrateur
 
-https://freesound.org/people/DDT197/sounds/445776/
+*1. Est-ce que c'est un projet en équipe ou individuel?*
+   je vais faire mon projet individuellement
 
-https://pixabay.com/sound-effects/cartoon-jump-6462/
+*2. Est-ce que vous allez continuer à développer et raffiner le jeu des projets antérieurs ?*
+   oui je vais continuer le même projet et je vais essayer d'amélioerer la reaction entre joueur, emplacement pour sortir et entrer entre les scenes, hud pour la carte et mon health bar.
 
-https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
+*3. Quelle est la nouvelle fonctionnalité extra qui impacte la jouabilité (ex. high score persistant, niveau de boss, évolution du personnage, etc.) que vous voulez explorer dans ce projet ?*
+   j'ai plein à ajouter. Écran d'entrer, instructions de jeux(HUD), le reacteur et une salle de rangement, inventaire, écran loser et une fin.
 
-https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
+   fin = joueur va dans la salle de reacteur vois qu'il manque une pièce dans le vaisseau et donc il doit aller dans la salle de rangement pour trouver la partie et retourner dans le reacteur pour enfin reparer le vaisseau.
 
-https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
-
-https://pixabay.com/sound-effects/futuristic-factory-noise-004-311135/
-
-https://pixabay.com/sound-effects/futuristic-factory-machine-ps-014-314825/
-
-https://pixabay.com/sound-effects/mad-scientist-lab-loopable-71170/
-
-**Personnages**
-
-https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
-
-https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi
-
-**Musique**
-
-https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
-
-https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
-
-https://pixabay.com/music/ambient-unidentified-208890/
-
-**Assets utilisés**
-
-https://craftpix.net/freebies/free-industrial-zone-tileset-pixel-art/?num=1&count=32&sq=industrial&pos=3
-
-https://zofiab.itch.io/
-
-https://haiyoooo.itch.io/
 
 # tp-3
 
@@ -78,22 +52,46 @@ C. HUD
 
 # Créditation
 
-Autre salles
+Effet speciaux
+
+https://freesound.org/people/DDT197/sounds/445776/
+
+https://pixabay.com/sound-effects/cartoon-jump-6462/
+
+https://pixabay.com/sound-effects/slap-hurt-pain-sound-effect-262618/
+
+https://pixabay.com/sound-effects/various-mushy-impacts-or-wet-splats-70685/
+
+https://pixabay.com/sound-effects/dramatic-death-collapse-352720/
+
+https://pixabay.com/sound-effects/futuristic-factory-noise-004-311135/
+
+https://pixabay.com/sound-effects/futuristic-factory-machine-ps-014-314825/
+
+https://pixabay.com/sound-effects/mad-scientist-lab-loopable-71170/
+
+https://pixabay.com/sound-effects/winner-game-sound-404167/
+
+https://pixabay.com/sound-effects/search/loser/
+
+**Personnages**
+
+https://pixfinity.itch.io/sci-fi-warrior  | personnage principale
+
+https://elthen.itch.io/2d-pixel-art-brain-mole-monarch-sprites   | ennemi
+
+**Musique**
+
+https://pixabay.com/music/video-games-grim-proceedings-harpsichord-plodding-dance-haunted-addams-148252/
+
+https://pixabay.com/music/ambient-space-travellinx27-low-rumble-295793/
+
+https://pixabay.com/music/ambient-unidentified-208890/
+
+**Assets utilisés**
+
+https://craftpix.net/freebies/free-industrial-zone-tileset-pixel-art/?num=1&count=32&sq=industrial&pos=3
 
 https://zofiab.itch.io/
 
-https://haiyoooo.itch.io/
-
-
-# projet_integrateur
-
-*1. Est-ce que c'est un projet en équipe ou individuel?*
-   je vais faire mon projet individuellement
-
-*2. Est-ce que vous allez continuer à développer et raffiner le jeu des projets antérieurs ?*
-   oui je vais continuer le même projet et je vais essayer d'amélioerer la reaction entre joueur, emplacement pour sortir et entrer entre les scenes, hud pour la carte et mon health bar.
-
-*3. Quelle est la nouvelle fonctionnalité extra qui impacte la jouabilité (ex. high score persistant, niveau de boss, évolution du personnage, etc.) que vous voulez explorer dans ce projet ?*
-   j'ai plein à ajouter. Écran d'entrer, instructions de jeux(HUD), le reacteur et une salle de rangement, inventaire, écran loser et une fin.
-
-   fin = joueur va dans la salle de reacteur vois qu'il manque une pièce dans le vaisseau et donc il doit aller dans la salle de rangement pour trouver la partie et retourner dans le reacteur pour enfin reparer le vaisseau.
+https://haiyoooo.itch.io/)
