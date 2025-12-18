@@ -21,3 +21,11 @@ func _on_quit_pressed() -> void:
 func _on_back_pressed() -> void:
 	$Credit.hide()
 	$Credit.grab_focus.call_deferred()
+
+func start_new_game():
+	var inventory = preload("res://Inventory/playerInventory.tres")
+	inventory.items.clear()
+	inventory.emit_changed()
+
+	global.current_health = global.max_health
+	global.game_first_loadin = false

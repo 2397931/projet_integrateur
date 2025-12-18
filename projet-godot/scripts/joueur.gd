@@ -61,11 +61,16 @@ func _on_hurt_box_area_entered(area):
 func die():
 	set_process(false)
 	set_physics_process(false)
+
 	$AnimatedSprite2D.play("death")
 	death.play()
-	await $AnimatedSprite2D.animation_finished
-	get_tree().reload_current_scene()
 
+	await $AnimatedSprite2D.animation_finished
+
+	global.register_death()
+
+	if global.death_count < global.max_deaths:
+		get_tree().reload_current_scene()
 
 
 # ----- Physics & movement (unchanged) -----

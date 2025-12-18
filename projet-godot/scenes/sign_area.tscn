@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://oe2rakpwuh0t"]
+
+[ext_resource type="Script" uid="uid://36mogv6124wv" path="res://scripts/sign_area.gd" id="1_1b3ct"]
+[ext_resource type="Texture2D" uid="uid://dep5434i556f0" path="res://assets/Pointer2.png" id="1_olwpa"]
+[ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="3_bt6oj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b3ct"]
+size = Vector2(20, 26)
+
+[node name="signArea" type="Area2D"]
+script = ExtResource("1_1b3ct")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_olwpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_1b3ct")
+
+[node name="Message" type="Node2D" parent="."]
+visible = false
+
+[node name="Fond" type="ColorRect" parent="Message"]
+offset_left = 13.0
+offset_top = -8.0
+offset_right = 127.0
+offset_bottom = 75.0
+metadata/_edit_group_ = true
+
+[node name="Etiquette" type="Label" parent="Message/Fond"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 101.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("3_bt6oj")
+theme_override_font_sizes/font_size = 11
+text = "hellovgbcncn"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.877
+one_shot = true
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c34gecy2ufov0"]
 
-[ext_resource type="Script" uid="uid://c3yl54780md28" path="res://scripts/canvas_layer.gd" id="1_7r8f0"]
+[ext_resource type="Script" uid="uid://u8urkrw2uld6" path="res://scripts/canvas_layer.gd" id="1_7r8f0"]
 [ext_resource type="Script" uid="uid://bgbx1wy6gm35i" path="res://scripts/barre_vie.gd" id="1_r3jmm"]
 [ext_resource type="Texture2D" uid="uid://cli0wjb4bn3kk" path="res://assets/6.png" id="1_w5rqn"]
 [ext_resource type="Texture2D" uid="uid://b71enpavq3el" path="res://assets/5.png" id="2_7r8f0"]

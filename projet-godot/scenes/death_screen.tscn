@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsqxiy6qyohw5"]
+
+[ext_resource type="Script" uid="uid://c4pgllkhsg0cm" path="res://scripts/death_screen.gd" id="1_dwo6e"]
+[ext_resource type="FontFile" uid="uid://kkof7uuxaayk" path="res://fonts/PixelOperator-Bold.ttf" id="1_uyutr"]
+
+[node name="death_screen" type="Node2D"]
+script = ExtResource("1_dwo6e")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 528.0
+offset_top = 169.0
+offset_right = 1611.0
+offset_bottom = 870.0
+
+[node name="game over" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 46.0
+offset_right = 898.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("1_uyutr")
+theme_override_font_sizes/font_size = 96
+text = "Game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = 120.5
+offset_right = 183.5
+offset_bottom = 267.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retry"
+
+[connection signal="pressed" from="Panel/retry" to="." method="_on_retry_pressed"]

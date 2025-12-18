@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://c2mio60weh83x"]
+[gd_scene load_steps=73 format=4 uid="uid://c2mio60weh83x"]
 
 [ext_resource type="Texture2D" uid="uid://o5gsepigjxrs" path="res://assets/Walls.png" id="1_1k3m2"]
 [ext_resource type="Script" uid="uid://bb6lwi8hvi8pg" path="res://scripts/infirmerie.gd" id="1_xyff2"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c34gecy2ufov0" path="res://scenes/barre_vie.tscn" id="24_g64cb"]
 [ext_resource type="PackedScene" uid="uid://dbgbfq7w15onw" path="res://scenes/inventory_ui.tscn" id="25_jxrr2"]
 [ext_resource type="AudioStream" uid="uid://bp4b1tx5xgsju" path="res://audio/mad-scientist-lab-loopable-71170.mp3" id="28_jxrr2"]
+[ext_resource type="PackedScene" uid="uid://b1bkrn7t023pe" path="res://scenes/health_kit.tscn" id="29_iyyms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8y7m"]
 texture = ExtResource("1_1k3m2")
@@ -4219,6 +4220,9 @@ script = ExtResource("21_xyff2")
 
 [node name="red_card" parent="." instance=ExtResource("8_6fj2q")]
 position = Vector2(1606, 870)
+
+[node name="healthKit" parent="." instance=ExtResource("29_iyyms")]
+position = Vector2(147, 992)
 
 [node name="joueur" parent="." instance=ExtResource("11_20ln6")]
 position = Vector2(417, 931)

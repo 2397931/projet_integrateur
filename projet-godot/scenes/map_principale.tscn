@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://m4g0jcl2xmt3"]
+[gd_scene load_steps=36 format=4 uid="uid://m4g0jcl2xmt3"]
 
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="1_gt4m6"]
 [ext_resource type="Script" uid="uid://hpvn2q4j4nm3" path="res://scripts/map_principale.gd" id="1_kx8oq"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://by1vdpe3n0axv" path="res://scenes/joueur.tscn" id="13_fkdho"]
 [ext_resource type="PackedScene" uid="uid://cr5a1i7ip2vf1" path="res://scenes/ennemi.tscn" id="14_yb64g"]
 [ext_resource type="Script" uid="uid://itswjbceile0" path="res://scripts/canvas_layer (2).gd" id="17_e6y6f"]
+[ext_resource type="Script" uid="uid://r3muntnyxsr8" path="res://scripts/camera_2d.gd" id="17_phqtq"]
 [ext_resource type="PackedScene" uid="uid://dbgbfq7w15onw" path="res://scenes/inventory_ui.tscn" id="18_oox85"]
+[ext_resource type="PackedScene" uid="uid://b5axurtmk3vjx" path="res://scenes/instructions_hud.tscn" id="19_oox85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx3ok"]
 texture = ExtResource("1_gt4m6")
@@ -1317,6 +1319,9 @@ sources/9 = SubResource("TileSetAtlasSource_78mrq")
 sources/10 = SubResource("TileSetAtlasSource_wpdkc")
 sources/11 = SubResource("TileSetAtlasSource_0klal")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6y6f"]
+size = Vector2(20, 27)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kx8oq"]
 size = Vector2(43, 181)
 
@@ -1368,6 +1373,32 @@ tile_set = SubResource("TileSet_7t5li")
 [node name="ennemi" parent="." instance=ExtResource("14_yb64g")]
 position = Vector2(1081, 913)
 
+[node name="signArea1" type="Area2D" parent="."]
+position = Vector2(542, 915)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="signArea1"]
+texture_filter = 1
+texture = ExtResource("4_mgex8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signArea1"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_e6y6f")
+
+[node name="signArea2" type="Area2D" parent="."]
+position = Vector2(1531, 915)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="signArea2"]
+texture_filter = 1
+texture = ExtResource("4_mgex8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signArea2"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_e6y6f")
+
 [node name="joueur" parent="." instance=ExtResource("13_fkdho")]
 position = Vector2(1837, 912)
 
@@ -1377,6 +1408,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
+script = ExtResource("17_phqtq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="joueur"]
 process_mode = 3
@@ -1403,6 +1435,16 @@ position = Vector2(1867, 906)
 position = Vector2(31.5, -26.5)
 shape = SubResource("RectangleShape2D_kx8oq")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="instructionsHud" parent="CanvasLayer" instance=ExtResource("19_oox85")]
+offset_left = 566.0
+offset_top = 872.0
+offset_right = -1197.0
+offset_bottom = -141.0
+
+[connection signal="body_entered" from="signArea1" to="." method="_on_sign_area_1_body_entered"]
+[connection signal="body_entered" from="signArea2" to="." method="_on_sign_area_2_body_entered"]
 [connection signal="closed" from="joueur/CanvasLayer/Inventory_ui" to="." method="_on_inventory_ui_closed"]
 [connection signal="opened" from="joueur/CanvasLayer/Inventory_ui" to="." method="_on_inventory_ui_opened"]
 [connection signal="body_entered" from="suite" to="." method="_on_suite_body_entered"]

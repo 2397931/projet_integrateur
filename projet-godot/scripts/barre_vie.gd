@@ -5,18 +5,17 @@ var current_health := max_health
 var heart_sprite: AnimatedSprite2D
 
 func _ready():
-	# Get the sprite node
 	heart_sprite = $CanvasLayer/AnimatedSprite2D
 	if heart_sprite:
 		heart_sprite.stop()
 
-	# Connect to global health signal
-	global.health_changed.connect(update_health)
+	# Connect ONCE
+	if not global.health_changed.is_connected(update_health):
+		global.health_changed.connect(update_health)
 
-	# Update the health bar to current value
 	update_health(global.current_health)
 
-	# Hide initially (Main Menu)
+	# Hidden by default (menu)
 	visible = false
 
 func update_health(new_health: int) -> void:
@@ -26,10 +25,8 @@ func update_health(new_health: int) -> void:
 		heart_sprite.stop()
 		heart_sprite.frame = max_health - current_health
 
-# Call this manually when entering a scene
 func show_health_bar():
 	visible = true
 
-# Call this manually when leaving a scene (like Main Menu)
 func hide_health_bar():
 	visible = false

@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://cbcbjoxm7piqy"]
+[gd_scene load_steps=56 format=4 uid="uid://cbcbjoxm7piqy"]
 
-[ext_resource type="Script" uid="uid://c57dlqhjqn8ad" path="res://scripts/reacteur.gd" id="1_qmfof"]
+[ext_resource type="Script" uid="uid://j7gvnle8t8s" path="res://scripts/reacteur_suite.gd" id="1_6rohq"]
 [ext_resource type="Texture2D" uid="uid://bnot6an618du8" path="res://assets/Tiles.png" id="2_6rohq"]
 [ext_resource type="Texture2D" uid="uid://bkgtvrl521f52" path="res://assets/Props.png" id="2_pjbbt"]
 [ext_resource type="Texture2D" uid="uid://gg08whe6hald" path="res://assets/tiles_dark.png" id="3_pjbbt"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://cwqs7qpqaanof" path="res://assets/Fence3.png" id="19_vsc4j"]
 [ext_resource type="AudioStream" uid="uid://bsa2s6r7ww7dm" path="res://audio/futuristic-factory-machine-ps-014-314825.mp3" id="20_t1oku"]
 [ext_resource type="AudioStream" uid="uid://bum5qg3t70rgo" path="res://audio/futuristic-factory-noise-004-311135.mp3" id="21_hxvtw"]
+[ext_resource type="Texture2D" uid="uid://baht7skfjdmgt" path="res://assets/machineCaser.png" id="23_yc6lh"]
+[ext_resource type="Texture2D" uid="uid://ctf1y7yewxral" path="res://assets/machineReparer.png" id="24_em8tg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc6lh"]
 texture = ExtResource("2_pjbbt")
@@ -2825,19 +2827,19 @@ sources/1 = SubResource("TileSetAtlasSource_ird7v")
 sources/2 = SubResource("TileSetAtlasSource_qq2nu")
 sources/3 = SubResource("TileSetAtlasSource_vxg66")
 
-[node name="reacteur" type="Node2D"]
-script = ExtResource("1_qmfof")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjbbt"]
+size = Vector2(29, 142.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hexfi"]
+size = Vector2(369, 592)
+
+[node name="reacteur_suite" type="Node2D"]
+script = ExtResource("1_6rohq")
 
 [node name="ecran" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAKAAQAAAABAAgAAAAKAAUAAAABAAkAAAALAAQAAAACAAgAAAALAAUAAAACAAkAAAANAAQAAAABAAIAAAANAAUAAAABAAMAAAAOAAQAAAACAAIAAAAOAAUAAAACAAMAAAAMAAUAAAAJABEAAAA=")
-tile_set = SubResource("TileSet_em8tg")
-
-[node name="ecran2" type="TileMapLayer" parent="."]
-texture_filter = 1
-scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAcAAwAAAAHAA8AAAAdAAwAAAAIAA8AAAAaAAwAAAAHAA8AAAAbAAwAAAAIAA8AAAAYAAwAAAAHAA8AAAAZAAwAAAAIAA8AAAAWAAwAAAAHAA8AAAAXAAwAAAAIAA8AAAAUAAwAAAAHAA8AAAAVAAwAAAAIAA8AAAA=")
 tile_set = SubResource("TileSet_em8tg")
 
 [node name="arriere_plan1" type="TileMapLayer" parent="."]
@@ -2874,7 +2876,7 @@ tile_map_data = PackedByteArray("AAAAADwAAAAAABAAAAAAAD0AAAAAABEAAAABADwAAAABABA
 tile_set = SubResource("TileSet_ice2b")
 
 [node name="joueur" parent="." instance=ExtResource("16_43w7n")]
-position = Vector2(68, 768)
+position = Vector2(159, 770)
 scale = Vector2(4, 4)
 
 [node name="Camera2D" type="Camera2D" parent="joueur"]
@@ -2903,3 +2905,30 @@ volume_db = -18.353
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="entrer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrer"]
+position = Vector2(17, 757)
+shape = SubResource("RectangleShape2D_pjbbt")
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1597, 543.5)
+scale = Vector2(0.5, 0.532407)
+texture = ExtResource("23_yc6lh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(1597, 543.5)
+scale = Vector2(0.5, 0.532407)
+texture = ExtResource("24_em8tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1600.5, 545)
+shape = SubResource("RectangleShape2D_hexfi")
+
+[connection signal="body_entered" from="entrer" to="." method="_on_entrer_body_entered"]
+[connection signal="body_exited" from="entrer" to="." method="_on_entrer_body_exited"]

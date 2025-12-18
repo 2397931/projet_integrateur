@@ -10,12 +10,16 @@ var isOpen = false
 
 func _ready() -> void:
 	inventory.changed.connect(update)
+
+	for slot in slots:
+		slot.item_used.connect(_on_slot_item_used)
+
 	update()
 
 func update() -> void:
 	for i in range(slots.size()):
 		if i < inventory.items.size():
-			slots[i].update(inventory.items[i])
+			slots[i].update(inventory.items[i], inventory)
 		else:
 			slots[i].clear()
 
@@ -29,6 +33,9 @@ func close():
 	isOpen = false
 	closed.emit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_slot_item_used(item: InventoryItem):
+	if item.name == "health":
+		if global.current_health < global.max_health:
+			global.heal(item.heal_amount)
+			inventory.items.erase(item)
+			inventory.emit_changed()

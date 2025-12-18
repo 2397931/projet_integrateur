@@ -7,4 +7,5 @@
 script = ExtResource("1_ij04g")
 name = "blue_card"
 texture = ExtResource("2_ij04g")
+heal_amount = 0
 metadata/_custom_type_script = "uid://bdm7ouqrf851a"
